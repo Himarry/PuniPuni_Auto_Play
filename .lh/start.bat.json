@@ -1,0 +1,26 @@
+{
+    "sourceFile": "start.bat",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1750493481819,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1750495704823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,43 @@\n @echo off\r\n-chcp 65001\r\n-echo 妖怪ウォッチぷにぷに自動周回ソフト\r\n-echo ===============================\r\n+echo 妖怪ウォッチぷにぷに自動周回ツール 起動中...\r\n echo.\r\n \r\n-echo 必要なライブラリをインストール中...\r\n+REM Pythonの存在チェック\r\n+python --version >nul 2>&1\r\n+if %errorlevel% neq 0 (\r\n+    echo エラー: Pythonがインストールされていません\r\n+    echo Python 3.8以上をインストールしてください\r\n+    pause\r\n+    exit /b 1\r\n+)\r\n+\r\n+REM 仮想環境の作成（初回のみ）\r\n+if not exist \"venv\" (\r\n+    echo 仮想環境を作成中...\r\n+    python -m venv venv\r\n+)\r\n+\r\n+REM 仮想環境をアクティベート\r\n+call venv\\Scripts\\activate\r\n+\r\n+REM 依存関係のインストール\r\n+echo 依存関係をチェック・インストール中...\r\n pip install -r requirements.txt\r\n \r\n+REM ADBの存在チェック\r\n+adb version >nul 2>&1\r\n+if %errorlevel% neq 0 (\r\n+    echo.\r\n+    echo 警告: ADBが見つかりません\r\n+    echo LDPlayerまたはAndroid SDK Platformのadb.exeにパスを通してください\r\n+    echo.\r\n+)\r\n+\r\n+REM アプリケーション起動\r\n echo.\r\n-echo アプリケーションを起動しています...\r\n+echo アプリケーションを起動中...\r\n python main.py\r\n \r\n+echo.\r\n+echo アプリケーションが終了しました\r\n pause\r\n"
+                },
+                {
+                    "date": 1750516447427,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,43 +0,0 @@\n-@echo off\r\n-echo 妖怪ウォッチぷにぷに自動周回ツール 起動中...\r\n-echo.\r\n-\r\n-REM Pythonの存在チェック\r\n-python --version >nul 2>&1\r\n-if %errorlevel% neq 0 (\r\n-    echo エラー: Pythonがインストールされていません\r\n-    echo Python 3.8以上をインストールしてください\r\n-    pause\r\n-    exit /b 1\r\n-)\r\n-\r\n-REM 仮想環境の作成（初回のみ）\r\n-if not exist \"venv\" (\r\n-    echo 仮想環境を作成中...\r\n-    python -m venv venv\r\n-)\r\n-\r\n-REM 仮想環境をアクティベート\r\n-call venv\\Scripts\\activate\r\n-\r\n-REM 依存関係のインストール\r\n-echo 依存関係をチェック・インストール中...\r\n-pip install -r requirements.txt\r\n-\r\n-REM ADBの存在チェック\r\n-adb version >nul 2>&1\r\n-if %errorlevel% neq 0 (\r\n-    echo.\r\n-    echo 警告: ADBが見つかりません\r\n-    echo LDPlayerまたはAndroid SDK Platformのadb.exeにパスを通してください\r\n-    echo.\r\n-)\r\n-\r\n-REM アプリケーション起動\r\n-echo.\r\n-echo アプリケーションを起動中...\r\n-python main.py\r\n-\r\n-echo.\r\n-echo アプリケーションが終了しました\r\n-pause\r\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1750493481819,
+            "name": "Commit-0",
+            "content": "@echo off\r\nchcp 65001\r\necho 妖怪ウォッチぷにぷに自動周回ソフト\r\necho ===============================\r\necho.\r\n\r\necho 必要なライブラリをインストール中...\r\npip install -r requirements.txt\r\n\r\necho.\r\necho アプリケーションを起動しています...\r\npython main.py\r\n\r\npause\r\n"
+        }
+    ]
+}

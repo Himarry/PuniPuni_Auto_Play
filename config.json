@@ -1,0 +1,10 @@
+{
+  "device": "emulator-5554",
+  "tap_interval": 0.5,
+  "detection_threshold": 0.8,
+  "window_size": "600x500",
+  "auto_refresh_devices": true,
+  "log_level": "INFO",
+  "save_debug_images": false,
+  "debug_images_path": "debug_images"
+}

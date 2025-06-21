@@ -1,0 +1,22 @@
+{
+    "sourceFile": "settings_template.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1750493481588,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1750516447435,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +0,0 @@\n-{\r\n-  \"similarity_threshold\": 0.8,\r\n-  \"tap_delay\": 0.3,\r\n-  \"puzzle_tap_count\": 2,\r\n-  \"check_interval\": 0.1,\r\n-  \"screenshot_cache_time\": 0.05,\r\n-  \"human_like_delay_min\": 0.15,\r\n-  \"human_like_delay_max\": 0.4,\r\n-  \"use_memory_capture\": true\r\n-}\r\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1750493481588,
+            "name": "Commit-0",
+            "content": "{\r\n  \"similarity_threshold\": 0.8,\r\n  \"tap_delay\": 0.3,\r\n  \"puzzle_tap_count\": 2,\r\n  \"check_interval\": 0.1,\r\n  \"screenshot_cache_time\": 0.05,\r\n  \"human_like_delay_min\": 0.15,\r\n  \"human_like_delay_max\": 0.4,\r\n  \"use_memory_capture\": true\r\n}\r\n"
+        }
+    ]
+}

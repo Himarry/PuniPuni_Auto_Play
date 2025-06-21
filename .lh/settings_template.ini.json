@@ -1,0 +1,22 @@
+{
+    "sourceFile": "settings_template.ini",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1750495704642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1750516447433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,23 +0,0 @@\n-[detection]\r\n-# 検出間隔（秒）\r\n-interval = 1.0\r\n-\r\n-# タップ間隔（秒）\r\n-tap_delay = 0.5\r\n-\r\n-# 検出閾値（0.5-1.0）\r\n-threshold = 0.8\r\n-\r\n-[device]\r\n-# ADBパス（システムPATHにある場合は空欄）\r\n-adb_path = \r\n-\r\n-# デバイスID（複数デバイスがある場合）\r\n-device_id = \r\n-\r\n-[advanced]\r\n-# スクリーンショットの保存パス\r\n-screenshot_path = temp_screenshot.png\r\n-\r\n-# ログレベル（DEBUG, INFO, WARNING, ERROR）\r\n-log_level = INFO\r\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1750495704642,
+            "name": "Commit-0",
+            "content": "[DETECTION]\r\n# 画像認識の閾値 (0.1-1.0, 高いほど厳密)\r\nthreshold = 0.8\r\n\r\n# タップ間の待機時間（秒）\r\ntap_cooldown = 0.5\r\n\r\n# スクリーンキャプチャの間隔（秒）\r\ncapture_interval = 0.1\r\n\r\n# デバイスを無効化するまでの最大エラー回数\r\nmax_error_count = 5\r\n\r\n[DEVICES]\r\n# デバイスの自動検出を行うかどうか\r\nauto_detect = true\r\n\r\n# 使用するデバイスのリスト（カンマ区切り）\r\ndevice_list = \r\n\r\n[LOGGING]\r\n# ログレベル (DEBUG, INFO, WARNING, ERROR, CRITICAL)\r\nlevel = INFO\r\n\r\n# ログファイル名\r\nfile = automation.log\r\n\r\n# ログファイルの最大サイズ（MB）\r\nmax_size_mb = 10\r\n\r\n# バックアップファイルの保持数\r\nbackup_count = 5\r\n\r\n[GUI]\r\n# ウィンドウの幅\r\nwindow_width = 800\r\n\r\n# ウィンドウの高さ\r\nwindow_height = 600\r\n\r\n# 常に最前面に表示するかどうか\r\nalways_on_top = false\r\n\r\n# 閉じるボタンで最小化するかどうか\r\nminimize_to_tray = true\r\n\r\n[TEMPLATES]\r\n# テンプレート画像のディレクトリ\r\ndirectory = image\r\n\r\n# 各テンプレート画像のファイル名\r\nboss_file = boss.jpg\r\nplay_file = play.png\r\npuzzle_file = puzzle.png\r\nwaza_ok_file = waza_ok.png\r\nnext_file = next.png\r\nstage_45_file = stage_45.png\r\nclose_file = close.png\r\nclose_mini_file = close_mini.png\r\n"
+        }
+    ]
+}

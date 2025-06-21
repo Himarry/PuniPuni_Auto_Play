@@ -1,0 +1,18 @@
+{
+    "sourceFile": "test_image_management.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1750518940472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1750518940472,
+            "name": "Commit-0",
+            "content": "#!/usr/bin/env python3\r\n# -*- coding: utf-8 -*-\r\n\"\"\"\r\n画像管理機能のテストスクリプト\r\nGUI無しでautomation_engineの画像読み込み機能をテスト\r\n\"\"\"\r\n\r\nimport os\r\nimport sys\r\nfrom config_manager import ConfigManager\r\nfrom automation_engine import AutomationEngine\r\n\r\ndef test_image_management():\r\n    \"\"\"画像管理機能のテスト\"\"\"\r\n    print(\"=== 画像管理機能テスト ===\")\r\n    \r\n    # 設定管理とオートメーションエンジンの初期化\r\n    config_manager = ConfigManager()\r\n    automation_engine = AutomationEngine(config_manager)\r\n    \r\n    # 現在の画像リストを表示\r\n    print(f\"\\nタップする画像: {len(automation_engine.image_paths)}個\")\r\n    for name, path in automation_engine.image_paths.items():\r\n        exists = \"✓\" if os.path.exists(path) else \"✗\"\r\n        print(f\"  {exists} {name}: {path}\")\r\n    \r\n    print(f\"\\nタップしない画像: {len(automation_engine.ignore_images)}個\")\r\n    for name, path in automation_engine.ignore_images.items():\r\n        exists = \"✓\" if os.path.exists(path) else \"✗\"\r\n        print(f\"  {exists} {name}: {path}\")\r\n    \r\n    # imageフォルダの存在確認\r\n    image_dir = \"image\"\r\n    if os.path.exists(image_dir):\r\n        all_images = [f for f in os.listdir(image_dir) if f.lower().endswith(('.png', '.jpg', '.jpeg'))]\r\n        print(f\"\\nimageフォルダ内の画像ファイル: {len(all_images)}個\")\r\n        for img in all_images:\r\n            print(f\"  - {img}\")\r\n    else:\r\n        print(f\"\\n警告: {image_dir} フォルダが存在しません\")\r\n    \r\n    # 設定値の確認\r\n    config = config_manager.get_config()\r\n    print(f\"\\n誤タップ防止設定:\")\r\n    print(f\"  prevent_goukan: {config.get('prevent_goukan', '未設定')}\")\r\n    print(f\"  prevent_yuubin: {config.get('prevent_yuubin', '未設定')}\")\r\n    print(f\"  prevent_ranking: {config.get('prevent_ranking', '未設定')}\")\r\n    print(f\"  prevent_menu: {config.get('prevent_menu', '未設定')}\")\r\n    \r\n    print(\"\\n=== テスト完了 ===\")\r\n\r\nif __name__ == \"__main__\":\r\n    test_image_management()\r\n"
+        }
+    ]
+}

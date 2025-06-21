@@ -1,0 +1,18 @@
+{
+    "sourceFile": "test_gui_init.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1750519500668,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1750519500668,
+            "name": "Commit-0",
+            "content": "#!/usr/bin/env python3\r\n# -*- coding: utf-8 -*-\r\n\"\"\"\r\nGUI起動テスト用の簡易スクリプト\r\n画像管理機能の初期化をテスト\r\n\"\"\"\r\n\r\nimport os\r\nimport sys\r\nfrom config_manager import ConfigManager\r\nfrom automation_engine import AutomationEngine\r\n\r\ndef test_gui_initialization():\r\n    \"\"\"GUI初期化のテスト\"\"\"\r\n    print(\"=== GUI初期化テスト ===\")\r\n    \r\n    try:\r\n        # 設定管理とオートメーションエンジンの初期化\r\n        config_manager = ConfigManager()\r\n        automation_engine = AutomationEngine(config_manager)\r\n        \r\n        print(\"✓ ConfigManager初期化成功\")\r\n        print(\"✓ AutomationEngine初期化成功\")\r\n        \r\n        # 設定値の確認\r\n        config = config_manager.get_config()\r\n        print(f\"✓ 設定読み込み成功: {len(config)}項目\")\r\n        \r\n        # 画像フォルダの確認\r\n        image_dir = \"image\"\r\n        if os.path.exists(image_dir):\r\n            images = [f for f in os.listdir(image_dir) if f.lower().endswith(('.png', '.jpg', '.jpeg'))]\r\n            print(f\"✓ 画像フォルダ確認: {len(images)}個の画像ファイル\")\r\n        else:\r\n            print(\"⚠ 画像フォルダが存在しません（初回起動時は正常）\")\r\n        \r\n        print(\"\\n=== テスト成功 ===\")\r\n        print(\"GUIアプリケーションが正常に起動可能です\")\r\n        \r\n    except Exception as e:\r\n        print(f\"✗ エラー: {str(e)}\")\r\n        print(\"\\n=== テスト失敗 ===\")\r\n        return False\r\n        \r\n    return True\r\n\r\nif __name__ == \"__main__\":\r\n    test_gui_initialization()\r\n"
+        }
+    ]
+}

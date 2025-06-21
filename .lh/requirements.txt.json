@@ -1,0 +1,30 @@
+{
+    "sourceFile": "requirements.txt",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1750493481819,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1750495704604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n-opencv-python==4.8.1.78\r\n-numpy==1.24.3\r\n-Pillow==10.0.0\r\n-psutil==5.9.5\r\n+opencv-python>=4.8.0\r\n+numpy>=1.24.0\r\n+Pillow>=10.0.0\r\n+PyQt5>=5.15.0\r\n"
+                },
+                {
+                    "date": 1750516446229,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +0,0 @@\n-opencv-python>=4.8.0\r\n-numpy>=1.24.0\r\n-Pillow>=10.0.0\r\n-PyQt5>=5.15.0\r\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1750517160768,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,3 @@\n-\n+opencv-python>=4.8.0\r\n+numpy>=1.24.0\r\n+Pillow>=10.0.0\r\n"
+                }
+            ],
+            "date": 1750493481819,
+            "name": "Commit-0",
+            "content": "opencv-python==4.8.1.78\r\nnumpy==1.24.3\r\nPillow==10.0.0\r\npsutil==5.9.5\r\n"
+        }
+    ]
+}
