@@ -1,0 +1,22 @@
+{
+    "sourceFile": "MacOS/README_mac.md",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1750520585182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1750520662429,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,4 +29,28 @@\n \r\n ---\r\n \r\n Windows版の `automation_engine.py` や `config_manager.py` などは共通で利用できます。\r\n+\r\n+---\r\n+\r\n+# MacOS版：配布用アプリ化について\r\n+\r\n+本ツールはMacOSでもスタンドアロンアプリ（.app）として配布可能です。\r\n+\r\n+## Mac用スタンドアロン化（.app化）手順\r\n+1. Python3と依存パッケージをインストール\r\n+2. `pip3 install pyinstaller`\r\n+3. MacOSフォルダで以下を実行：\r\n+   ```sh\r\n+   pyinstaller --noconfirm --onefile --windowed main.py\r\n+   ```\r\n+   - `dist/main` または `dist/main.app` が生成されます\r\n+   - `image/` フォルダや config.json も同梱してください\r\n+4. Gatekeeper対策で初回は右クリック→「開く」で起動\r\n+\r\n+## 配布時の注意\r\n+- `image/` フォルダや設定ファイルも一緒に配布してください\r\n+- ADB（Android Debug Bridge）は各自でインストール・パス設定が必要です\r\n+- 詳細な手順やトラブルシュートは本READMEおよび親ディレクトリのREADME.mdも参照\r\n+\r\n+---\r\n"
+                }
+            ],
+            "date": 1750520585182,
+            "name": "Commit-0",
+            "content": "# 妖怪ウォッチぷにぷに 自動プレイ for MacOS\r\n\r\n## 概要\r\nMacOSで動作する妖怪ウォッチぷにぷに自動タップ補助ツールです。\r\n\r\n- GUI: tkinter\r\n- 画像検出: OpenCV2\r\n- ADB経由でAndroid端末を制御\r\n- 画像管理・誤タップ防止・設定永続化などWindows版と同等の機能\r\n\r\n## 使い方\r\n1. Python3, ADB, 必要なパッケージをインストール\r\n2. MacOSフォルダ内で `python3 main.py` を実行\r\n3. GUIからデバイス選択・設定・画像管理が可能\r\n\r\n## 注意点\r\n- MacOSではADBのパスや権限に注意してください\r\n- 画像パスやファイル操作は基本的にWindows版と同じですが、パス区切りや権限で問題が出た場合は適宜修正してください\r\n\r\n## 必要パッケージ\r\n- opencv-python\r\n- numpy\r\n- Pillow\r\n- tkinter (標準搭載)\r\n\r\n## 既知の違い\r\n- フォントやウィンドウサイズがMacで最適化されていない場合は適宜調整してください\r\n- ADBのインストール方法やパス設定はMacOSの手順に従ってください\r\n\r\n---\r\n\r\nWindows版の `automation_engine.py` や `config_manager.py` などは共通で利用できます。\r\n"
+        }
+    ]
+}
